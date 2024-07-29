@@ -1,15 +1,21 @@
-import customtkinter as ctk
+import tkinter as tk
 
-ctk.set_appearance_mode("System")
-ctk.set_default_color_theme("green")
+def ok_exit():
+  window.destroy()
 
-class App(ctk.CTk):
-  def __init__(self, *args, **kwargs):
-    super().__init__(*args, **kwargs)
+window = tk.Tk()
+window.title("Ema's Alarm!")
+window.geometry('520x300')
+window.eval('tk::PlaceWindow . center')
 
-    self.title("App")
-    self.geometry("200x200")
+btn = tk.Button(
+        master=window,
+        text="Dorucak!",
+        fg="white",
+        bg="blue",
+        width=20,
+        height=10,
+        command=ok_exit
+      ).pack()
 
-if __name__ == "__main__":
-  app = App()
-  app.mainloop()
+window.mainloop()
